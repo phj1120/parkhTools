@@ -18,3 +18,14 @@ my_jamo.py 실행
 https://needjarvis.tistory.com/627
 
 https://github.com/kaniblu/hangul-utils
+
+
+# 오류
+UnicodeEncodeError: 'cp949' codec can't encode character '\u1109' in position 0: illegal multibyte sequence
+
+다른 파일 받아서 바꾸려 했는데 오류 발생
+
+아직 해결 못함
+
+* 오류 발생한 파일
+인프런 강의 노트 : 스프링MVC-웹애플리케이션이해v2020-03-08
