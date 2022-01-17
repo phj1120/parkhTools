@@ -1,6 +1,6 @@
 // F12 -> console 에 복붙
 // 강의 시간 입력
-minute = 23;
+minute = 30;
 
 setTimeout(function(){
        document.querySelector("#bttnClose > a").click()
