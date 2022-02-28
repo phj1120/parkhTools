@@ -1,0 +1,23 @@
+function reload(){
+	$('#centerFrame').contentWindow.$('searchOpen').click()
+}
+
+function apply(subject,  time){
+	var rows = $('#centerFrame').contentWindow.document.getElementById("gridMst").getElementsByTagName("tr");
+
+	var signal = 0;
+	for( var r=2; r<rows.length; r++ ){
+		var cells = rows[r].getElementsByTagName("td");
+		if(cells[3] && cells[6]){
+			if(cells[3].innerHTML.indexOf(subject) !== -1 && cells[6].innerHTML.indexOf(time) !== -1){
+				console.log(cells[3].innerHTML +" : "+ cells[6].innerHTML);
+				cells[0].getElementsByTagName('img')[0].click()
+			}
+		}
+	}
+}	
+var subject = "창업길잡이";
+var time = "월 15:00";
+
+reload()
+apply(subject, time)

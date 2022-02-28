@@ -1,0 +1,38 @@
+// https://webisfree.com/2014-04-08/[javascript]-%EC%8B%9C%EA%B0%84-%EC%A7%80%EC%97%B0-%ED%95%A8%EC%88%98-%EC%9D%BC%EC%A0%95-%EC%8B%9C%EA%B0%84-%EB%92%A4-%EC%8B%A4%ED%96%89%EC%8B%9C%ED%82%A4%EA%B8%B0-settimeout()-%7B%7D
+// 구현 X, 추후 추가해볼 예정
+
+function apply(subject,  time){
+	// reload
+	$('#centerFrame').contentWindow.$('searchOpen').click()
+	
+	// click
+	var rows = $('#centerFrame').contentWindow.document.getElementById("gridMst").getElementsByTagName("tr");
+
+	var signal = 0;
+	for( var r=2; r<rows.length; r++ ){
+		var cells = rows[r].getElementsByTagName("td");
+		if(cells[3] && cells[6]){
+			if(cells[3].innerHTML.indexOf(subject) !== -1 && cells[6].innerHTML.indexOf(time) !== -1){
+				console.log(cells[3].innerHTML +" : "+ cells[6].innerHTML);
+				cells[0].getElementsByTagName('img')[0].click()
+			}
+		}
+	}
+}	
+var subject = "창업길잡이";
+var time = "월 15:00";
+apply(subject, time)
+
+var _interval = setInterval(targetFunction,120000);
+
+function getRandSec(){
+ return Math.floor(Math.random() * 120) + 1;
+}
+
+function targetFunction(){
+ var sec = getRandSec();
+ console.log(sec);
+ if(_autoStartStatus){
+  setTimeout(apply(), sec*1000);
+ }
+}
